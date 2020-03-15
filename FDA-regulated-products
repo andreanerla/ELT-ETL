@@ -15,7 +15,7 @@ data = json.load(open("enforcement.json")) #opening the json file
 
 df = pd.DataFrame(data["results"]) #saving the json file as pandas dataframe
 
-csv_data = df.to_csv(r'C:\Users\andre\Desktop\data_science\data engineering\US food csv.csv', index = False, header = True) #converting the dataframe into a csv and saving it
+csv_data = df.to_csv(index = False, header = True) #converting the dataframe into a csv and saving it
 
 #todo: 
 # - store the CSV in SQL 
