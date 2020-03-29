@@ -28,7 +28,7 @@ engine = create_engine('mssql+pyodbc://LAPTOP-NAAAGCHR\SQLEXPRESS/DS udemy train
 
 conn = engine.connect() #creating the connection with SQL
 
-tosql = df.to_sql('results', con=engine,if_exists="append",index=False,chunksize=1000)
+tosql = df.to_sql('results', con=engine,if_exists="append",index=False,chunksize=1000) #uploading the file in SQL Server
 
 conn.close()
 
