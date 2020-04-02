@@ -20,4 +20,3 @@ conn.close()
 
 #todo
 #normalize tables
-#transformation da pandas o sql?
