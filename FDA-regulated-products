@@ -34,7 +34,9 @@ conn.close()
 
 
 #todo:  
-# - automate the process with Luigi
+# - automate the process with AWS
+    - store the file locally (in tmp or temp folder?)
+    -cloudwatch -> lambda -> s3
 
 
 
