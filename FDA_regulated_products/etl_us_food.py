@@ -1,12 +1,3 @@
-'''
-The openFDA food enforcement reports API returns data from the FDA Recall Enterprise System (RES),
-a database that contains information on recall event information submitted to FDA.
-Currently, this data covers publicly releasable records from 2004-present. The data is updated weekly.
-The procedures followed to input recall information into RES when FDA learns of a recall event
-are outlined in Chapter 7 of FDA’s Regulatory Procedure Manual The Regulatory Procedures Manual is a reference manual for FDA personnel.
-It provides FDA personnel with information on internal procedures to be used in processing domestic and import regulatory and enforcement matters.
-'''
-
 import requests
 import pandas as pd
 import json
