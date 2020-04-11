@@ -5,7 +5,7 @@ import pyodbc
 import os
 from datetime import datetime
 
-r = requests.get('https://api.fda.gov/food/enforcement.json?limit=100') #pulling the first 100 rows from the website endpoint (unfortunately I'm not allowed to pull more than 100 rows) 
+r = requests.get('https://api.fda.gov/food/enforcement.json?limit=100') #pulling the first 100 rows from the website endpoint (unfortunately I'm not allowed to pull more than that) 
 
 data = open('enforcement.json', 'wb').write(r.content) # saving the json file locally
 
