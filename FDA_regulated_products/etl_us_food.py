@@ -1,7 +1,6 @@
 import requests
 import pandas as pd
 import json
-from sqlalchemy import create_engine
 import pyodbc
 import os
 from datetime import datetime
