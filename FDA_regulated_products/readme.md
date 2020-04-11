@@ -1,4 +1,4 @@
-For more info about this dataset [https://open.fda.gov/apis/food/enforcement, click here] 
+For more info about this dataset see https://open.fda.gov/apis/food/enforcement  
 
 - Pulled JSON data from a US website endpoint
 - Saved it locally
