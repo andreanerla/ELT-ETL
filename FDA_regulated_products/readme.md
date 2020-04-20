@@ -3,7 +3,7 @@
 For more info about this dataset see https://open.fda.gov/apis/food/enforcement  
 
 - Pulled JSON data from a US gov website endpoint
-- Saved it on Linux machine
+- Saved it in Linux environment
 - Converted the "results" part in a CSV dataframe
 - Renamed the file as its timestamp
 - Imported it in a AWS S3 bucket with Amazon Command Line Interface
