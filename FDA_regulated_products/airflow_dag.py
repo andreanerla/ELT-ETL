@@ -19,7 +19,7 @@ def etl():
     return os.system(r'aws s3 cp ./python_linux_files/fda_csv.csv s3://fda-regulated-products/fda_' + now_date + '.csv') 
 
 dag = DAG('fda_products', description='FDA products from US gov. endpoint to AWS S3 bucket',
-           schedule_interval='*/5 * * * *',
+           schedule_interval='0 0 * * MON',
           start_date=datetime(2020, 4, 20), catchup=False)
 
 dummy_operator = DummyOperator(task_id='dummy_task', retries = 3, dag=dag)
