@@ -1,22 +1,29 @@
 
+from datetime import datetime
+from airflow import DAG
+from airflow.operators.dummy_operator import DummyOperator
+from airflow.operators.python_operator import PythonOperator
 import requests
 import pandas as pd
 import json
 import os
 from datetime import datetime
 
-r = requests.get('https://api.fda.gov/food/enforcement.json?limit=100') #pulling the first 100 rows from the website endpoint (unfortunately I'm not allowed to pull mo$
-data = open('enforcement.json', 'wb').write(r.content) # saving the json file locally
+def etl():
+    r = requests.get('https://api.fda.gov/food/enforcement.json?limit=100') #pulling the first 100 rows from the website
+    data = json.load(open("enforcement.json")) #opening the json file
+    df = pd.DataFrame(data["results"]) #saving the json file as pandas dataframe
+    df['openfda']= df['openfda'].astype(str) #without this step the "openfda" column would be treated as "dict" type
+    now = datetime.now()
+    now_date = str(now.year) + "-" + str(now.month) + "-" + str(now.day) + "-" + str(now.hour) + "-" + str(now.minute) 
+    return os.system(r'aws s3 cp ./python_linux_files/fda_csv.csv s3://fda-regulated-products/fda_' + now_date + '.csv') 
 
-data = json.load(open("enforcement.json")) #opening the json file
+dag = DAG('fda_products', description='FDA products from US gov. endpoint to AWS S3 bucket',
+           schedule_interval='*/5 * * * *',
+          start_date=datetime(2020, 4, 20), catchup=False)
 
-df = pd.DataFrame(data["results"]) #saving the json file as pandas dataframe
+dummy_operator = DummyOperator(task_id='dummy_task', retries = 3, dag=dag)
 
-df['openfda']= df['openfda'].astype(str) #without this step the "openfda" column would be treated as "dict" type, causing the table to not be uploaded to SQL
+fda_operator = PythonOperator(task_id='fda_etl_task', python_callable=etl, dag=dag)
 
-csv_df = df.to_csv("fda_csv.csv") #converting the file as CSV
-
-now = datetime.now()
-
-now_date = str(now.year) + "-" + str(now.month) + "-" + str(now.day) + "-" + str(now.hour) + "-" + str(now.minute) #assigning the current date to the file which will b$
-os.system(r'aws s3 cp ./python_linux_files/fda_csv.csv s3://fda-regulated-products/fda_' + now_date + '.csv') #uploading the file to S3 bucket with amazon command line$
+dummy_operator >> fda_operator
