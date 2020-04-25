@@ -3,9 +3,6 @@
 ![Alt Text](https://i.imgur.com/PUJwTjV.png)
 
 
-For more info about this dataset see https://open.fda.gov/apis/food/enforcement  
-
-
 
 For more info about this dataset see https://open.fda.gov/apis/food/enforcement  
 
