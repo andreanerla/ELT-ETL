@@ -9,5 +9,5 @@ For more info about this dataset see https://open.fda.gov/apis/food/enforcement
 - Imported it in a AWS S3 bucket with Amazon Command Line Interface
 - Automated the entire process to run every Monday with a Airflow DAG   
 
-[Alt Text](https://imgur.com/a/380DY8H)
+![Alt Text](https://i.imgur.com/PUJwTjV.png)
 
