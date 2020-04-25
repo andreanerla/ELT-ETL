@@ -1,4 +1,4 @@
-# WIND Toolkit Power Data 
+# WIND Toolkit Power Data ETL
 
 ![Alt Text](https://i.imgur.com/EeBYJh5.png)
 
