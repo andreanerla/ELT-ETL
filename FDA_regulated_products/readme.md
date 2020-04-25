@@ -1,9 +1,10 @@
 # FDA RES Data Automated Cloud ETL 
 
+![Alt Text](https://i.imgur.com/PUJwTjV.png)
 
-![Alt Text](https://i.imgur.com/EeBYJh5.png)
 
-![Alt Text](https://i.imgur.com/9dMrR1B.png)
+For more info about this dataset see https://open.fda.gov/apis/food/enforcement  
+
 
 
 For more info about this dataset see https://open.fda.gov/apis/food/enforcement  
