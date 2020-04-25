@@ -1,5 +1,9 @@
 # WIND Toolkit Power Data 
 
+![Alt Text](https://i.imgur.com/EeBYJh5.png)
+
+![Alt Text](https://i.imgur.com/9dMrR1B.png)
+
 - Extracted CSV file from https://data.nrel.gov/files/54/wtk_site_metadata.csv
 - Converted it into Pandas dataframe and stored it in local SQL Server
 - Reorganized the Dataframe following a star schema organization
