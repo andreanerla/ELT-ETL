@@ -8,3 +8,6 @@ For more info about this dataset see https://open.fda.gov/apis/food/enforcement
 - Renamed the file as its timestamp
 - Imported it in a AWS S3 bucket with Amazon Command Line Interface
 - Automated the entire process to run every Monday with a Airflow DAG   
+
+
+(https://imgur.com/a/380DY8H)
