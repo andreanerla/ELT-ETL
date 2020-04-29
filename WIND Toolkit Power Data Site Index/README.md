@@ -4,7 +4,7 @@
 
 ![Alt Text](https://i.imgur.com/9dMrR1B.png)
 
-- Extracted CSV file from https://data.nrel.gov/files/54/wtk_site_metadata.csv
+- Extracted CSV file (127K rows) from https://data.nrel.gov/files/54/wtk_site_metadata.csv
 - Converted it into Pandas dataframe and stored it in local SQL Server
 - Reorganized the Dataframe following a star schema organization
 - Graphically represented the star schema
