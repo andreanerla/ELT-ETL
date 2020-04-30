@@ -16,7 +16,3 @@ DROP COLUMN longitude, latitude, state, county, full_timeseries_directory, full_
 
 
 
-
--- UPDATE wind
--- SET full_timeseries_path = REPLACE(full_timeseries_path, LEFT(full_timeseries_path, 1), ' ')
--- FROM wind;
