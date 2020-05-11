@@ -16,7 +16,7 @@ def etl():
     df['openfda']= df['openfda'].astype(str) #without this step the "openfda" column would be treated as "dict" type
     now = datetime.now()
     now_date = str(now.year) + "-" + str(now.month) + "-" + str(now.day) + "-" + str(now.hour) + "-" + str(now.minute) 
-    return os.system(r'aws s3 cp ./python_linux_files/fda_csv.csv s3://fda-regulated-products/fda_' + now_date + '.csv') 
+    return os.system(r'aws s3 cp ./fda_csv.csv s3://fda-regulated-products/fda_' + now_date + '.csv') 
 
 dag = DAG('fda_products', description='FDA products from US gov. endpoint to AWS S3 bucket',
            schedule_interval='0 0 * * MON',
