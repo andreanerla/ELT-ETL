@@ -11,3 +11,4 @@
 
 To do: 
 - Normalize the tables
+- Include "/" in full_timeseries_path
