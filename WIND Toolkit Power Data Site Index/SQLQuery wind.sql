@@ -5,10 +5,13 @@ FROM [DS udemy training].[dbo].[wind];
  
 ---
 
-SELECT site_id, full_timeseries_directory, full_timeseries_path 
+SELECT site_id, full_timeseries_directory, right(full_timeseries_path, len(full_timeseries_path)-1) as full_timeseries_path  
 INTO [DS udemy training].[dbo].[wind_dir_path]
 FROM [DS udemy training].[dbo].[wind];
 
+'''
+deleting the first charachter of full_timeseries_path as it is redundant (already present in full_timeseries_directory)
+'''
 ---
 
 ALTER TABLE [DS udemy training].[dbo].[wind] 
