@@ -9,8 +9,11 @@ SELECT site_id, full_timeseries_directory, full_timeseries_path
 INTO [DS udemy training].[dbo].[wind_dir_path]
 FROM [DS udemy training].[dbo].[wind];
 
+UPDATE wind_dir_path
+SET full_timeseries_path = RIGHT(full_timeseries_path, len(full_timeseries_path) - CHARINDEX('/', full_timeseries_path))
+
 '''
-deleting the first charachter of full_timeseries_path as it is redundant (already present in full_timeseries_directory)
+deleting the charachters before "/" from full_timeseries_path as they are redundant (already present in full_timeseries_directory)
 '''
 ---
 
