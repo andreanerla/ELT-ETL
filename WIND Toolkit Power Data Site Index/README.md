@@ -10,5 +10,5 @@
 - Made the database conform to the first normalization rule
 
 To do: 
-- Normalize the tables 
+- Normalize the tables (second and third rule)
 - Include "/" in full_timeseries_path
